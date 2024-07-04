@@ -1,0 +1,57 @@
+<h2 class="content-block">Tasks</h2>
+
+<ng-container *ngIf="dataSource">
+  <dx-data-grid
+    class="dx-card wide-card"
+    keyExpr="ticker"
+    [dataSource]="dataSource"
+    [showBorders]="false"
+    [columnAutoWidth]="true"
+    [allowColumnResizing]="true"
+    [columnAutoWidth]="true"
+  >
+    <dxo-paging [pageSize]="10"></dxo-paging>
+    <dxo-pager [showPageSizeSelector]="true" [showInfo]="true"></dxo-pager>
+    <dxo-filter-row [visible]="true"></dxo-filter-row>
+
+    <dxi-column dataField="ticker"> </dxi-column>
+
+    <dxi-column dataField="preco" [format]="brazilianCurrency"> </dxi-column>
+
+    <dxi-column dataField="ultimoDividendo" [format]="brazilianCurrency">
+    </dxi-column>
+
+    <dxi-column dataField="dy" format="decimal" [customizeText]="percentage">
+    </dxi-column>
+
+    <dxi-column dataField="valorPatrimonialCota" [format]="brazilianCurrency">
+    </dxi-column>
+
+    <dxi-column dataField="pVp" format="decimal"> </dxi-column>
+
+    <dxi-column dataField="liquidezMediaDiaria" [format]="brazilianCurrency">
+    </dxi-column>
+
+    <dxi-column
+      dataField="percentualEmCaixa"
+      format="decimal"
+      [customizeText]="percentage"
+    >
+    </dxi-column>
+
+    <dxi-column dataField="cagrDividendos3Anos" format="decimal">
+    </dxi-column>
+
+    <dxi-column dataField="cagrValorCora3Anos" format="decimal">
+    </dxi-column>
+
+    <dxi-column dataField="patrimonio" [format]="brazilianCurrency">
+    </dxi-column>
+
+    <dxi-column dataField="nCotistas" format="fixedPoint"> </dxi-column>
+
+    <dxi-column dataField="gestao"> </dxi-column>
+
+    <dxi-column dataField="nCotas" format="fixedPoint"> </dxi-column>
+  </dx-data-grid>
+</ng-container>
